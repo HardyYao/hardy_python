@@ -1,7 +1,7 @@
-name = "hardy love python."
+name = "hardy yao."
 print(name.title())
 
-name = "hardy love python."
+name = "Hardy Yao."
 print(name.upper())
 print(name.lower())
 
