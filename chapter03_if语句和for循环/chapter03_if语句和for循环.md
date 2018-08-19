@@ -6,7 +6,9 @@
 
 > 如何编写简单的if-else语句
 
-> 如何编写简单的if-elif-else语句
+> 如何编写简单的if-elif-else结构
+
+> 如何测试多个条件
 
 ### 3.1 条件测试：检查一个条件
 
@@ -46,18 +48,17 @@
 	age_0 = 18
 	age_1 = 23
 	
-	# 为了增加可读性，可将每个条件测试都放在一堆括号中(当然，不这样做的话也不会出错)
-	flag = (age_0 >= 20) and (age_1 >= 20)
+	print('两个年龄值都大于20，结果为True，否则为False，结果为：')
 	
-	print('两个年龄值都大于20，flag为True，否则为False，结果为：')
-	if flag:
-	    print(flag)
+	# 为了增加可读性，可将每个条件测试都放在一堆括号中(当然，不这样做的话也不会出错)
+	if (age_0 >= 20) and (age_1 >= 20):
+	    print(True)
 	else:
-	    print(flag)
+	    print(False)
 
 运行这个程序，会输出以下结果：
 
-	两个年龄值都大于20，flag为True，否则为False，结果为：
+	两个年龄值都大于20，结果为True，否则为False，结果为：
 	False
 
 #### 3.2.2 使用or检查多个条件
@@ -69,18 +70,17 @@
 	age_0 = 18
 	age_1 = 23
 	
-	# 为了增加可读性，可将每个条件测试都放在一堆括号中(当然，不这样做的话也不会出错)
-	flag = (age_0 >= 20) or (age_1 >= 20)
+	print('两个年龄值有一个大于20，结果为True；若两个年龄值都小于20，则为False，结果为：')
 	
-	print('两个年龄值有一个大于20，flag为True；若两个年龄值都小于20，则为False，结果为：')
-	if flag:
-	    print(flag)
+	# 为了增加可读性，可将每个条件测试都放在一堆括号中(当然，不这样做的话也不会出错)
+	if (age_0 >= 20) or (age_1 >= 20):
+	    print(True)
 	else:
-	    print(flag)
+	    print(False)
 
 运行这个程序，会输出以下结果：
 
-	两个年龄值有一个大于20，flag为True；若两个年龄值都小于20，则为False，结果为：
+	两个年龄值有一个大于20，结果为True；若两个年龄值都小于20，则为False，结果为：
 	True
 
 ### 3.3 检查特定值是否包含在列表中
@@ -91,27 +91,120 @@
 
 	requested_toppings = ['mushrooms', 'onions', 'pineapple']
 	
-	print('特定的值若在列表中，flag为True；否则为False，结果为：')
+	print('特定的值若在列表中，结果为True；否则为False，此处的结果为：')
 	
-	flag1 = 'mushrooms' in requested_toppings
-	if flag1:
-	    print(flag1)
+	if 'mushrooms' in requested_toppings:
+	    print(True)
 	else:
-	    print(flag1)
+	    print(False)
 	
 	print('--------------------------------------------------------')
 	
-	print('特定的值若在列表中，flag为True；否则为False，结果为：')
-	flag2 = 'pepperoni' in requested_toppings
-	if flag2:
-	    print(flag2)
+	print('特定的值若在列表中，结果为True；否则为False，此处的结果为：')
+	
+	if 'pepperoni' in requested_toppings:
+	    print(True)
 	else:
-	    print(flag2)
+	    print(False)
 
 运行这个程序，会输出以下结果：
 
-	特定的值若在列表中，flag为True；否则为False，结果为：
+	特定的值若在列表中，结果为True；否则为False，此处的结果为：
 	True
 	--------------------------------------------------------
-	特定的值若在列表中，flag为True；否则为False，结果为：
+	特定的值若在列表中，结果为True；否则为False，此处的结果为：
 	False
+
+### 3.4 if-else语句
+
+在上面的例子中，我们看到了：if-else这样的语句块，在条件测试通过的时候执行一个操作，在没有通过的时候执行另一个操作；if-else语句块类似于简单的if语句，但其中的else语句让你能够指定条件测试未通过时要执行的操作。
+
+新建一个名为voting.py的文件，编写以下代码：
+
+	age = 16
+	
+	if age >= 18:
+	    print("你年满18周岁，可以投票了！")
+	    print("你已经投票了吗？")
+	else:
+	    print("你尚未满18周岁，不能投票！")
+	    print("请你在年满18周岁以后再来投票！")
+
+运行这个程序，会输出以下结果：
+
+	你尚未满18周岁，不能投票！
+	请你在年满18周岁以后再来投票！
+
+上面是一个根据年龄判断是否可以投票的小程序，当年龄大于等于18周岁时，满足测试条件，可以投票；反之，则未通过测试条件，执行else语句下面的操作。
+
+### 3.5 if-elif-else结构
+
+以上的例子都只是针对两个或两个以下的测试条件，在实际生活中，很多时候需要考虑得情形都大于两个。例如，游乐场会根据不同年龄段来收费。
+
+新建一个名为amusement_park.py的程序，编写以下代码：
+
+	age = 15
+	
+	if age < 4:
+	    print('四岁一下的儿童可免费入场！')
+	elif age < 15:
+	    print('4岁以上，15岁以下的门票费为5元！')
+	elif age < 18:
+	    print('15岁以上，18岁以下的门票费为10元！')
+	else:
+	    print('18岁以上的成人门票费为20！')
+
+运行这个程序，会输出以下结果：
+
+	15岁以上，18岁以下的门票费为10元！
+
+Python只执行if-elif-else结构中的一个代码块，它依次检查每个条件测试，直到遇到通过了的条件测试。测试通过后，Python将执行紧跟它后面的代码，并跳过余下的测试。
+
+### 3.6 测试多个条件
+
+if-elif-else结构虽然功能强大，但是仅适用于只有一个条件满足的情况：遇到通过了的测试之后，Python就会跳过余下的测试。这种结构在只需要测试一个特定的条件时，效率是很高的。
+
+但是，有时候你必须检查所有条件，在这种情况下，应使用一系列不包含elif和else代码块的if语句。在可能有多个条件为True，且你需要在每个条件为True时都采取响应的措施时，可以使用这种方法。
+
+举个比萨店的例子，假如顾客点了两种配料，就需要确保在其比萨中包含这些配料。在这种情况下，你如果使用if-elif-else结构，则无法将两种配料添加进去，只能结合多个if语句来进行条件测试。
+
+新建一个名为toppings.py的程序，编写以下代码：
+
+	requested_toppings = ['mushrooms', 'extra cheese']
+	
+	if 'mushrooms' in requested_toppings:
+	    print('Adding mushrooms.')
+	if 'pepperoni' in requested_toppings:
+	    print('Adding pepperoni.')
+	if 'extra cheese' in requested_toppings:
+	    print('Adding extra cheese.')
+	
+	print('Finished making your pizza!')
+
+运行这个程序，会输出以下结果：
+
+	Adding mushrooms.
+	Adding extra cheese.
+	Finished making your pizza!
+
+### 3.7 小结
+
+在本章中，我们学习了：如何使用if语句和for循环检查条件、如何编写简单的if-else语句、如何编写简单的if-elif-else结构以及如何测试多个条件。
+
+通过本章的学习，你应该学会了简单的条件测试。
+
+### 3.8 题外话
+
+前天听公司前辈提起我们部门老大的故事，颇有感触，我们老大年轻时为了赶项目，经常会敲代码敲到半夜三四点，即便是现在，他已经事业有成了，为了赶计划、写方案，他也经常会熬夜到半夜三四点。正所谓，你想要达到什么样的目标，你就得付出相应的努力。
+
+对比起最近的自己，我真的觉得：我还差得很远啊，比自己优秀许多倍的人还那么拼，我有什么资格说自己太忙了，纯粹是自己不懂得安排时间。
+
+昨天制定了未来两个月的计划，包括：工作上、自我提升上以及生活上的各种计划(将晚上睡觉的时间和早上起床的时间延迟了一点，腾出更多时间用于自我提升)，要开始培养新的学习、生活习惯了。
+
+哈哈，我好像经常慢半拍的样子，明明应该知道：只要换了个环境，不管原来培养的良好习惯多么有用，在新的环境中也不一定适用，可是我却总是延用旧的方法，导致四处碰壁。
+
+我在大学四年坚持的各种良好习惯，确实让我取得了巨大的进步，但是这并不意味着我能一直延用那套学习方法，工作与读书完全不一样，需要学习的东西还有很多。
+
+昨晚制定好计划以后，立即开始执行，效果还不错，未来两个月，希望至少可以输出10篇文章。
+
+坚持下去，两个月后，我应该能取得很大的进步。

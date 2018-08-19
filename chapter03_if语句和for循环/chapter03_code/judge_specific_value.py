@@ -6,19 +6,18 @@
 
 requested_toppings = ['mushrooms', 'onions', 'pineapple']
 
-print('特定的值若在列表中，flag为True；否则为False，结果为：')
+print('特定的值若在列表中，结果为True；否则为False，此处的结果为：')
 
-flag1 = 'mushrooms' in requested_toppings
-if flag1:
-    print(flag1)
+if 'mushrooms' in requested_toppings:
+    print(True)
 else:
-    print(flag1)
+    print(False)
 
 print('--------------------------------------------------------')
 
-print('特定的值若在列表中，flag为True；否则为False，结果为：')
-flag2 = 'pepperoni' in requested_toppings
-if flag2:
-    print(flag2)
+print('特定的值若在列表中，结果为True；否则为False，此处的结果为：')
+
+if 'pepperoni' in requested_toppings:
+    print(True)
 else:
-    print(flag2)
+    print(False)
