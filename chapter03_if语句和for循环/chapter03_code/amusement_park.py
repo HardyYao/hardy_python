@@ -7,7 +7,7 @@
 age = 15
 
 if age < 4:
-    print('四岁一下的儿童可免费入场！')
+    print('四岁以下的儿童可免费入场！')
 elif age < 15:
     print('4岁以上，15岁以下的门票费为5元！')
 elif age < 18:
