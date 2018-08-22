@@ -8,7 +8,7 @@
 
 > 如何遍历字典中的数据
 
-> 如何存储字典的列表、存储列表的字典和存储字典的字典
+> 字典的嵌套
 
 ### 4.1 如何使用和访问字典中的信息
 
@@ -136,4 +136,128 @@
 	language:Ruby
 	language:Python
 
-### 4.4 如何存储字典的列表、存储列表的字典和存储字典的字典
+### 4.4 字典的嵌套
+
+有时候，需要将一系列字典存储在列表中，或将列表作为值存储在字典中，这称为嵌套。你可以在列表中嵌套字典、在字典中嵌套列表甚至在字典中嵌套字典。
+
+新建一个名为nested_dict.py的文件，编写以下代码：
+
+	'''
+	在列表中嵌套字典
+	'''
+	print('---------------------在列表中嵌套字典---------------------')
+	
+	# 创建一个用于存储外星人的空列表
+	aliens = []
+	
+	# 创建30个绿色的外星人
+	for alien_number in range(30):
+	    new_alien = {'color': 'green', 'points': 5, 'speed': 'slow'}
+	    aliens.append(new_alien)
+	
+	# 显示前五个外星人
+	for alien in  aliens[:5]:
+	    print(alien)
+	print('...')
+	
+	# 显示创建了多少个外星人
+	print('Total number of aliens: ' + str(len(aliens)))
+	
+	'''
+	在字典中嵌套列表
+	'''
+	print('---------------------在字典中嵌套列表---------------------')
+	
+	# 存储喜欢的编程语言的信息
+	favorite_languages = {
+	    'jen': ['python', 'ruby'],
+	    'sarah': ['c'],
+	    'edward': ['ruby', 'go'],
+	    'phil': ['python', 'haskell'],
+	}
+	
+	for name, languages in favorite_languages.items():
+	    print(name.title() + "'s favorite languages are:")
+	    for language in languages:
+	        print("\t" + language.title())
+	
+	'''
+	在字典中嵌套字典
+	'''
+	print('---------------------在字典中嵌套字典---------------------')
+	
+	# 存储两个用户的个人信息：名、姓和居住地
+	users = {
+	    'aeinstein': {
+	        'first': 'albert',
+	        'last': 'einstein',
+	        'location': 'princeton',
+	    },
+	
+	    'mcurie': {
+	        'first': 'marie',
+	        'last': 'curie',
+	        'location': 'paris',
+	    },
+	
+	}
+	
+	for username, user_info in users.items():
+	    print("Username: " + username)
+	    full_name = user_info['first'] + " " + user_info['last']
+	    location = user_info['location']
+	
+	    print("\tFull name: " + full_name.title())
+	    print("\tLocation: " + location.title())
+
+运行这个程序，会输出以下结果：
+
+	---------------------在列表中嵌套字典---------------------
+	{'color': 'green', 'points': 5, 'speed': 'slow'}
+	{'color': 'green', 'points': 5, 'speed': 'slow'}
+	{'color': 'green', 'points': 5, 'speed': 'slow'}
+	{'color': 'green', 'points': 5, 'speed': 'slow'}
+	{'color': 'green', 'points': 5, 'speed': 'slow'}
+	...
+	Total number of aliens: 30
+	---------------------在字典中嵌套列表---------------------
+	Jen's favorite languages are:
+		Python
+		Ruby
+	Sarah's favorite languages are:
+		C
+	Edward's favorite languages are:
+		Ruby
+		Go
+	Phil's favorite languages are:
+		Python
+		Haskell
+	---------------------在字典中嵌套字典---------------------
+	Username: aeinstein
+		Full name: Albert Einstein
+		Location: Princeton
+	Username: mcurie
+		Full name: Marie Curie
+		Location: Paris
+
+### 4.5 小结
+
+在本章中，你学习了如何使用和访问字典中的信息、如何增删改字典中的信息、如何遍历字典中的数据以及存储字典的列表、存储列表的字典和存储字典的字典。
+
+字典是一种可变容器模型，且可存储任意类型对象。它是Python中非常重要的一种数据结构，在网站开发中，可用字典存储各种各样的关联信息，例如上文中的外星人信息、用户信息以及编程语言信息等；在爬虫中，经常会爬取到大量的json格式的信息，在Python中，可以将json格式的信息转化为字典来进行处理。
+
+总之，字典的用处多多，若能好好利用，可以发挥极大的用处。
+
+### 4.6 题外话
+
+仔细一想，专注于学习与工作，才是令人持续获得充实感的唯一路径。
+
+前几周比较忙的时候，每周也会有两三天比较早回宿舍，可是我却把那些时间花在看视频上面，虽然有时也看会儿书敲会儿代码，但是效率很低，因为我当时觉得周末再认真学习就好了，工作日时间不多，还是算了。然后每次到快要睡觉的时候，心情都会有点失落，心里想着，一天又过去了，我该过多久才能重新找回状态？
+
+就那样过了两三个星期，回顾一下，才发现自己浪费了那么多时间。
+
+从上周六晚上开始，我每天晚上都是先把学习的任务完成了（效率高了很多），然后花半小时的时间学习吹口琴，再有时间，才看一集视频，睡觉前再看一小时的书，这样等到要睡觉的时候，就会觉得今天过得特充实，也没空胡思乱想了。
+
+像前几周那种颓废的状态我大学期间也经历过几次，只不过当时没太在意，认真反思了一下，这样消耗时间，可真的是伤不起啊。
+
+通过这段时间的思考，我想对自己（同时也对看到这篇文章的读者）说：任何时候都不要对自己说，过了这段时间或者做完某件事我再去执行某项计划，这样的想法往往到最后都无法落实。想做什么事，就立刻开始做，时间都是挤出来的，只要开始执行了，成绩就会一点点累积起来，过多一段时间，效果就体现出来了，有了正面反馈，就更加容易坚持下去，长此以往，绝对会有意想不到的进步。
