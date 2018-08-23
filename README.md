@@ -22,4 +22,10 @@
 
 > chapter01 变量和简单数据类型
 
+> chapter02 列表简介
+
+> chapter03 if语句和for循环
+
+> chapter04 字典
+
 
