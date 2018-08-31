@@ -29,12 +29,12 @@
 	Please enter your name: Hardy
 	Hello, Hardy!
 	-----------------------使用int()来获取数值输入-----------------------
-	How old are you ? 21
-	21大于18，True or False: True
+	How old are you ? 23
+	23大于18，True or False: True
 
 ### 4.2 如何使用while循环
 
-for循环用于针对集合中的每个元素的一个代码块，而while循环不断地运行，直到制定的条件不满足为止。
+for循环用于针对集合中的每个元素的一个代码块，而while循环则会不断地运行，直到指定的条件不满足为止。
 
 新建一个名为while_loop.py的文件，编写以下代码：
 	
@@ -134,11 +134,66 @@ for循环用于针对集合中的每个元素的一个代码块，而while循环
 
 运行这个程序，会输出以下结果：
 
-
+	-----------------------while循环从1数到5-----------------------
+	1
+	2
+	3
+	4
+	5
+	-----------------------while循环让用户选择何时退出-----------------------
+	Tell me something, and I will repeat it back to you, enter 'quit' to end the program: Hello
+	Hello
+	Tell me something, and I will repeat it back to you, enter 'quit' to end the program: quit
+	-----------------------使用break退出循环-----------------------
+	Please enter the name of a city you have visited, enter 'quit' to end the program: HangZhou
+	I'd love to go to Hangzhou!
+	Please enter the name of a city you have visited, enter 'quit' to end the program: quit
+	-----------------------在while循环中使用continue-----------------------
+	1
+	3
+	5
+	7
+	9
+	11
+	13
+	15
+	-----------------------使用while循环来处理列表-----------------------
+	Verifying user: Candace
+	Verifying user: Brian
+	Verifying user: Alice
+	
+	The following users have been confirmed: 
+	Candace
+	Brian
+	Alice
+	-----------------------使用while循环来处理字典-----------------------
+	
+	what is your name? Hardy
+	which mountain would you like to climb someday? TaiShan
+	Would you like to let another person respond? (yes / no) yes
+	
+	what is your name? HardyYao
+	which mountain would you like to climb someday? HengShan
+	Would you like to let another person respond? (yes / no) no
+	
+	--- Poll Results ---
+	Hardy would like to climb TaiShan.
+	HardyYao would like to climb HengShan.
 
 ### 4.3 小结
 
-
+在本章中，你学习了使用input()函数来接受用户输入的数据，同时结合了input()函数和while循环，从而可以输出各种各样的交互信息。
 
 ### 4.4 题外话
 
+写到这里，基础篇还差函数、类、文件处理和异常处理等知识点没讲，后面打算换种方式写了，尽量结合一些小项目来讲解，这样更能锻炼自己，在别人看来，文章也会更有趣些。
+
+距离上一篇文章发布，已经过去一个多星期了，我更新得还是太慢了，写作效率还有待提升，
+
+最近到天津出差，要将近一个月以后才能回去。虽然才8月份，现在总结还早了些，不过，2018，于我而言，真的是四处奔波的一年。我经历过两家公司，出过两次差，所以在半年多的时间里去过了四个城市：惠州->广州->茂名(出差)->广州->惠州->天津(出差)。每到一个新的地方，都得学会适应那里的环境，挺耗费时间与精力。
+
+虽然长辈们都说：趁着年轻，多出去走走，这是好事。可我真的不喜欢这样四处奔波，因为我目标很明确，我知道自己要干嘛，我想做的事情还有很多，我希望能有一个固定的、舒适的住处，专心学习自己感兴趣的东西，外面的世界，等我想见识了，我再出去走走就是了。可是，工作上的安排，也没办法呀，不想去也得去，权当锻炼自己的毅力和意志力了。
+
+很想过得潇洒一些，可是现在的自己，不管是性格还是能力，都不足以支撑起那样的生活方式。
+
+再给自己几年时间吧，未来充满着变数，要始终坚信自己会有个十分有趣的未来，不然，活着可就太痛苦了哈。
