@@ -1,4 +1,4 @@
-#实战练习之制作词云
+# 实战练习之制作词云
 
 ### 代码整体思路
 
@@ -22,6 +22,7 @@
 	
 	# 分词
 	def word_segment(fileName):
+		# 读取文本文件内容
 	    with open(fileName, 'r', encoding='utf-8') as f:
 	        myText = f.read()
 	    myText = " ".join(jieba.cut(myText))    # 使用jieba进行分词
